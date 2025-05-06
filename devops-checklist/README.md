@@ -17,7 +17,7 @@ The diagram represents six key stages in DevOps infrastructure maturity:
 
 ---
 
-##️ How to Run
+## How to Run
 
 ### Step 1: Set up your environment
 
