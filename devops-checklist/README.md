@@ -2,13 +2,7 @@
 
 This project uses the [Diagrams](https://diagrams.mingrammer.com/) Python library to visually represent a structured checklist for DevOps infrastructure. It guides users from auditing infrastructure to full automation using modern tooling.
 
-<<<<<<< Local Changes
-## Overview
-||||||| Old File
-## Overview
-=======
 ---
->>>>>>> External Changes
 
 ## Flow Overview
 
