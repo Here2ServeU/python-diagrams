@@ -48,5 +48,5 @@ for label, icon_file in stages:
 
 # Save and show
 plt.tight_layout()
-plt.savefig("sre_lifecycle_circular_with_icons_compact.png", dpi=300)
+plt.savefig("sre_lifecycle_circular.png", dpi=300)
 plt.show()
