@@ -22,14 +22,14 @@ G = nx.DiGraph()
 for i in range(len(stages)):
     G.add_edge(stages[i][0], stages[(i + 1) % len(stages)][0])
 
-# Generate circular layout
+# Generate smaller circular layout
 pos = nx.circular_layout(G)
 for key in pos:
-    pos[key] *= 1.3  # Slightly spread out for clarity
+    pos[key] *= 1.0  # Reduced circle size
 
 # Create figure
-fig, ax = plt.subplots(figsize=(12, 12))
-ax.set_title("SRE Lifecycle (Circular Layout)", fontsize=18, fontweight='bold')
+fig, ax = plt.subplots(figsize=(10, 10))
+ax.set_title("SRE Lifecycle (Compact Circular Layout)", fontsize=16, fontweight='bold')
 ax.axis('off')
 
 # Draw edges (arrows only)
@@ -41,13 +41,12 @@ for label, icon_file in stages:
     icon_path = os.path.join("icons", icon_file)
     if os.path.exists(icon_path):
         img = plt.imread(icon_path)
-        imagebox = OffsetImage(img, zoom=0.12)
+        imagebox = OffsetImage(img, zoom=0.08)  # Smaller image
         ab = AnnotationBbox(imagebox, (x, y), frameon=False)
         ax.add_artist(ab)
-    # Draw bold text under icon
-    ax.text(x, y - 0.25, label, fontsize=10, fontweight='bold', ha='center', va='top')
+    ax.text(x, y - 0.2, label, fontsize=9, fontweight='bold', ha='center', va='top')
 
 # Save and show
 plt.tight_layout()
-plt.savefig("sre_lifecycle_circular_with_icons.png", dpi=300)
+plt.savefig("sre_lifecycle_circular_with_icons_compact.png", dpi=300)
 plt.show()
